@@ -14,7 +14,7 @@
        state : started
 
    - name : Pull docker image
-     command : docker pull devopsedu/webapp:latest
+     command : docker pull nginx
 
    - name : Run Docker Image
-     command : docker run -itd -p 8085:80 devopsedu/webapp:latest
+     command : docker run -itd -P nginx
