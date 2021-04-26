@@ -3,6 +3,18 @@
   become : true
   become_user : root
   tasks :
+   - name: Install httpd
+    yum:
+      name: httpd
+      state: present
+    when: ansible_os_family == "RedHat"
+    
+    - name: Start httpd
+    service:
+      name: httpd 
+      state: started 
+      enabled: yes
+    when: ansible_os_family == "RedHat"
    - name : Install Docker
      yum:
        name: docker
