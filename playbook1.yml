@@ -12,6 +12,9 @@
      service :
        name : docker
        state : started
+       
+   - name : Docker prune
+     command : docker system prune --all
 
    - name : Pull docker image
      command : docker pull devopsedu/webapp:latest
