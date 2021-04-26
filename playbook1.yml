@@ -17,4 +17,4 @@
      command : docker pull devopsedu/webapp:latest
 
    - name : Run Docker Image
-     command : docker run -itd -P devopsedu/webapp:latest
+     command : docker run -itd -p 8085:80 devopsedu/webapp:latest
