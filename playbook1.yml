@@ -45,7 +45,7 @@
      command : docker pull devopsedu/webapp
 
    - name : Run Docker Image
-     command : docker run -itd -P  devopsedu/webapp
+     command : docker run -itd --name devops -P  devopsedu/webapp
      
    - name : Run apache server inside the container
      command : docker exec devops bash -c "service apache2 start"
