@@ -2,34 +2,7 @@
 - hosts : webservers
   become : true
   become_user : root
-  tasks :
-   - name: Install apache2
-     apt:
-      name: apache2
-      state: present
-     when: ansible_os_family == "Debian"
-
-   - name: Install httpd
-     yum:
-      name: httpd
-      state: present
-     when: ansible_os_family == "RedHat"
-
-# This task will start apache http server
-   - name: Start httpd
-     service:
-      name: httpd 
-      state: started 
-      enabled: yes
-     when: ansible_os_family == "RedHat"
-
-   - name: Start apache2
-     service:
-      name: apache2
-      state: started 
-      enabled: yes
-     when: ansible_os_family == "Debian"   
-       
+  tasks :    
        
    - name : Install Docker
      yum:
