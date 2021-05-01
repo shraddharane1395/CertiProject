@@ -29,7 +29,9 @@
        state : started
 
    - name : Build docker file
-     command : chdir =/tmp/gitrepo docker build -t myimage:v1 .
+     command : docker build -t myimage:v1 .
+     args :
+       chdir : /tmp/gitrepo
 
    - name : Run Docker image
      command : docker run -itd --name certimage -P myimage:v1
