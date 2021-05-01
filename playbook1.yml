@@ -16,7 +16,7 @@
    - name : Git clone
      git :
       repo : https://github.com/shraddharane1395/CertiProject.git
-      dest : /tmp/repo      
+      dest : /tmp/gitrepo      
        
    - name : Install Docker
      yum:
