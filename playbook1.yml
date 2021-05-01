@@ -27,5 +27,5 @@
      command : chdir /tmp/gitrepo docker build -t myimage:v1 .
 
    - name : Run Docker image
-     command : docker run -itd --name certimage myimage:v1
+     command : docker run -itd --name certimage -P myimage:v1
      
