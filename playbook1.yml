@@ -3,6 +3,15 @@
   become : true
   become_user : root
   tasks :    
+   - name : Install git
+     yum :
+      name : git
+      state : present
+      
+   - name : Git clone
+     git :
+      repo : https://github.com/shraddharane1395/CertiProject.git
+      dest : /tmp/repo      
        
    - name : Install Docker
      yum:
@@ -14,11 +23,9 @@
        name : docker
        state : started
 
-   - name : Pull docker image
-     command : docker pull devopsedu/webapp
+   - name : Build docker file
+     command : chdir /tmp/gitrepo docker build -t myimage:v1 .
 
-   - name : Run Docker Image
-     command : docker run -itd --name devops -P  devopsedu/webapp
+   - name : Run Docker image
+     command : docker run -itd --name certimage myimage:v1
      
-   - name : Run apache server inside the container
-     command : docker exec devops bash -c "service apache2 start"
