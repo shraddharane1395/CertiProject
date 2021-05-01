@@ -3,6 +3,11 @@
   become : true
   become_user : root
   tasks :    
+   - name : Create directory
+     file :
+       path : /tmp/gitrepo
+       state : directory
+       
    - name : Install git
      yum :
       name : git
@@ -24,7 +29,7 @@
        state : started
 
    - name : Build docker file
-     command : chdir /tmp/gitrepo docker build -t myimage:v1 .
+     command : chdir =/tmp/gitrepo docker build -t myimage:v1 .
 
    - name : Run Docker image
      command : docker run -itd --name certimage -P myimage:v1
