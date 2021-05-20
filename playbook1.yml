@@ -14,10 +14,10 @@
        state : started
        
    - name : Pull the container
-     command : docker pull shraddharane/myimage:$BUILD_NUMBER
+     command : docker pull shraddharane/myimage:latest
      
    - name : Run the container
-     command : docker run -itd --name container1 -P myimage:$BUILD_NUMBER
+     command : docker run -itd --name container1 -P myimage:latest
       
       
 
