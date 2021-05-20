@@ -2,12 +2,7 @@
 - hosts : webservers
   become : true
   become_user : root
-  tasks :    
-   - name : Create directory
-     file :
-       path : /tmp/gitrepo
-       state : directory
-       
+  tasks :          
    - name : Install Docker
      yum:
        name: docker
@@ -17,6 +12,14 @@
      service :
        name : docker
        state : started
+       
+   - name : Pull the container
+     command : docker pull shraddharane/myimage:$BUILD_NUMBER
+     
+   - name : Run the container
+     command : docker run -itd --name container1 -P myimage:$BUILD_NUMBER
+      
+      
 
    
      
