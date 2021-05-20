@@ -8,16 +8,6 @@
        path : /tmp/gitrepo
        state : directory
        
-   - name : Install git
-     yum :
-      name : git
-      state : present
-      
-   - name : Git clone
-     git :
-      repo : https://github.com/shraddharane1395/CertiProject.git
-      dest : /tmp/gitrepo      
-       
    - name : Install Docker
      yum:
        name: docker
@@ -28,11 +18,5 @@
        name : docker
        state : started
 
-   - name : Build docker file
-     args :
-       chdir : /tmp/gitrepo
-     command : docker build -t myimage:v1 .
-     
-   - name : Run Docker image
-     command : docker run -itd --name certimage -P myimage:v1
+   
      
