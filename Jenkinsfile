@@ -51,5 +51,5 @@ pipeline {
 def getVersion(){
     def commitHash = sh returnStdout: true, script: 'git rev-parse --short HEAD'
     return commitHash
-    //to pickup latest commit ID and store return value in variable 
+    //to pickup latest commit ID and store return value in variable .
 }
