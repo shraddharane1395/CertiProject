@@ -3,6 +3,8 @@ pipeline {
         jdk 'java_home'
         maven 'maven_home'
     }
+    triggers {
+    }
     environment {
     DOCKER_TAG = getVersion()
     }
