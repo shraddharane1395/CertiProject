@@ -1,7 +1,7 @@
 pipeline {
     tools {
         jdk 'java_home'
-        maven 'maven_home'
+        
     }
   
     environment {
