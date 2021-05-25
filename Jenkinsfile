@@ -1,7 +1,6 @@
 pipeline {
     tools {
         jdk 'java_home'
-        
     }
   
     environment {
